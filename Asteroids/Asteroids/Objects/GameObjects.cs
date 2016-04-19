@@ -9,5 +9,6 @@ namespace Asteroids.Objects
     {
         public Ship Ship { get; set; }
         public Bullet Bullet { get; set; }
+        public List<Asteroid> Asteroids { get; set; }
     }
 }

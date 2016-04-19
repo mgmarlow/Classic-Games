@@ -1,4 +1,5 @@
-﻿using Asteroids.Objects;
+﻿using System.Collections.Generic;
+using Asteroids.Objects;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -49,7 +50,15 @@ namespace Asteroids
             ship = new Ship(shipTexture, shipPos, Window.ClientBounds);
 
             var bulletTexture = Content.Load<Texture2D>("bullet");
-            bullet = new Bullet(bulletTexture, Window.ClientBounds);        
+            bullet = new Bullet(bulletTexture, Window.ClientBounds);
+
+            var asteroids = new List<Asteroid>();
+            var asteroidTexture = Content.Load<Texture2D>("asteroid");
+            for (int i = 0; i <= 5; i++)
+            {
+                // Create asteroids
+                asteroids.Add(new Asteroid());
+            }
 
             gameObjects = new GameObjects() { Ship = ship, Bullet = bullet };
         }

@@ -56,6 +56,7 @@ namespace Asteroids.Objects
                 {                    
                     gameObjects.Asteroids[i] = null;
                     IsActive = false;
+                    gameObjects.Score.PlayerScore += 5;
                 }
             }
 

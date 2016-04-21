@@ -19,6 +19,7 @@ namespace Asteroids
         private Bullet bullet;
         private List<Asteroid> asteroids; 
         private GameObjects gameObjects;
+        private Score score;
 
         public Game1()
         {
@@ -62,11 +63,14 @@ namespace Asteroids
                 asteroids.Add(new Asteroid(asteroidTexture, new Vector2(0 + 50 * i, 20), Window.ClientBounds));
             }
 
+            score = new Score(Content.Load<SpriteFont>("score"), Window.ClientBounds);
+
             gameObjects = new GameObjects()
             {
                 Ship = ship,
                 Bullet = bullet,
-                Asteroids = asteroids
+                Asteroids = asteroids,
+                Score = score
             };
         }
 
@@ -119,6 +123,8 @@ namespace Asteroids
             {
                 a?.Draw(spriteBatch);
             });
+
+            score.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);

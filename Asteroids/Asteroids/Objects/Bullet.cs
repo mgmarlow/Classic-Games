@@ -52,9 +52,8 @@ namespace Asteroids.Objects
                 Asteroid asteroid = gameObjects.Asteroids[i];
                 if (asteroid == null) continue;
                 if (BoundingBox.Intersects(asteroid.BoundingBox))
-                {
-                    //asteroid.IsAlive = false;
-                    gameObjects.Asteroids[i] = null;                    
+                {                    
+                    gameObjects.Asteroids[i] = null;
                     IsActive = false;
                 }
             }

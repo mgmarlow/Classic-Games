@@ -77,14 +77,8 @@ namespace Asteroids.Objects
             //{
             //    if (BoundingBox.Intersects(asteroid.BoundingBox))
             //    {
-                    
+                      // End game 
             //    }
-            //}
-            //if (BoundingBox.Intersects(gameObjects.PlayerPaddle.BoundingBox) ||
-            //    BoundingBox.Intersects(gameObjects.ComputerPaddle.BoundingBox))
-            //{
-            //    Velocity = new Vector2(-Velocity.X * 1.3f, Velocity.Y * 1.3f);
-            //}
 
             Velocity = new Vector2(velX, velY);
 

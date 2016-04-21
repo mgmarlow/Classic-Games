@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Asteroids.Objects
+namespace Asteroids.EntityManagement
 {
     public abstract class Sprite
     {

@@ -46,3 +46,9 @@
 /processorParam:TextureFormat=Color
 /build:asteroid.png
 
+#begin score.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:score.spritefont
+

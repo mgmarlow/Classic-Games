@@ -16,7 +16,7 @@ namespace Asteroids.Objects
         private float dirX;
         private float dirY;
 
-        public float Rotation { get; set; }
+        public float Rotation { get; set; }      
 
         public Asteroid (Texture2D texture, Vector2 pos, Rectangle screenBounds)
             : base (texture, pos, screenBounds)

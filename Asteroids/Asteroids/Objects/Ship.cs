@@ -71,7 +71,21 @@ namespace Asteroids.Objects
                     bullet.Rotation = Rotation;
                 }
             }
-            
+
+            // Check Collisions
+            //foreach (var asteroid in gameObjects.Asteroids)
+            //{
+            //    if (BoundingBox.Intersects(asteroid.BoundingBox))
+            //    {
+                    
+            //    }
+            //}
+            //if (BoundingBox.Intersects(gameObjects.PlayerPaddle.BoundingBox) ||
+            //    BoundingBox.Intersects(gameObjects.ComputerPaddle.BoundingBox))
+            //{
+            //    Velocity = new Vector2(-Velocity.X * 1.3f, Velocity.Y * 1.3f);
+            //}
+
             Velocity = new Vector2(velX, velY);
 
             base.Update(gameTime, gameObjects);

@@ -47,6 +47,18 @@ namespace Asteroids.Objects
 
             Velocity = new Vector2(dirX * dt * speed, dirY * dt * speed);
 
+            for (int i = 0; i < gameObjects.Asteroids.Count; i++)
+            {
+                Asteroid asteroid = gameObjects.Asteroids[i];
+                if (asteroid == null) continue;
+                if (BoundingBox.Intersects(asteroid.BoundingBox))
+                {
+                    //asteroid.IsAlive = false;
+                    gameObjects.Asteroids[i] = null;                    
+                    IsActive = false;
+                }
+            }
+
             Location += Velocity;
             CheckBounds();
         }

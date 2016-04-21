@@ -16,6 +16,7 @@ namespace Asteroids
 
         private Ship ship;
         private Bullet bullet;
+        private List<Asteroid> asteroids; 
         private GameObjects gameObjects;
 
         public Game1()
@@ -52,12 +53,12 @@ namespace Asteroids
             var bulletTexture = Content.Load<Texture2D>("bullet");
             bullet = new Bullet(bulletTexture, Window.ClientBounds);
 
-            var asteroids = new List<Asteroid>();
+            asteroids = new List<Asteroid>();
             var asteroidTexture = Content.Load<Texture2D>("asteroid");
             for (int i = 0; i <= 5; i++)
             {
                 // Create asteroids
-                asteroids.Add(new Asteroid());
+                asteroids.Add(new Asteroid(asteroidTexture, new Vector2(0 + 50 * i, 20), Window.ClientBounds));
             }
 
             gameObjects = new GameObjects() { Ship = ship, Bullet = bullet };
@@ -86,6 +87,11 @@ namespace Asteroids
             if (bullet.IsActive)
                 bullet.Update(gameTime, gameObjects);
 
+            asteroids.ForEach((a) =>
+            {
+                a.Update(gameTime, gameObjects);
+            });
+
             base.Update(gameTime);
         }
 
@@ -98,9 +104,16 @@ namespace Asteroids
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+
             ship.Draw(spriteBatch);            
             if (bullet.IsActive)
                 bullet.Draw(spriteBatch, gameObjects.Ship);
+
+            asteroids.ForEach((a) =>
+            {
+                a.Draw(spriteBatch);
+            });
+
             spriteBatch.End();
             base.Draw(gameTime);
         }
